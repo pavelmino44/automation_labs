@@ -1,0 +1,15 @@
+VAR CONSTANT
+	SPEED_SLOW : INT := 300; (*Slow speed: S0-S1, S2-S3, position search*)
+	SPEED_FAST : INT := 800; (*Fast speed: S1-S2*)
+	SPEED_STOP : INT := 0;
+	DRV_STATE_MASK : UINT := 16#006F; (*Status word mask*)
+	STATE_SWITCHED_ON : UINT := 16#0021; (*Ready to switch on*)
+	STATE_READY : UINT := 16#0023; (*Switched on*)
+	STATE_ENABLED : UINT := 16#0027; (*Operation enabled*)
+	STATE_FAULT_BIT : UINT := 16#0008; (*Fault bit*)
+	CMD_SHUTDOWN : UINT := 16#0006;
+	CMD_SWITCH_ON : UINT := 16#0007;
+	CMD_ENABLE : UINT := 16#000F;
+	CMD_FAULT_RESET : UINT := 16#0080;
+	BLINK_HALF_PERIOD_MS : UDINT := 500; (*1 Hz blink*)
+END_VAR
