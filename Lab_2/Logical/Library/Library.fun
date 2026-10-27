@@ -1,48 +1,48 @@
 
-{REDUND_ERROR} FUNCTION_BLOCK DriveStateMashine (*Frequency inverter control (CiA402)*) (*$GROUP=User,$CAT=User,$GROUPICON=User.png,$CATICON=User.png*)
+{REDUND_ERROR} FUNCTION_BLOCK DriveStateMashine (* *) (*$GROUP=User,$CAT=User,$GROUPICON=User.png,$CATICON=User.png*)
 	VAR_INPUT
-		state : UINT; (*Inverter status word (ETAD)*)
-		enable : BOOL; (*Enable FB*)
-		speedSet : INT; (*Speed setpoint from door logic*)
+		state : UINT;
+		enable : BOOL;
+		speedSet : INT;
 	END_VAR
 	VAR_OUTPUT
-		command : UINT; (*Inverter control word (CMDD)*)
-		speed : INT; (*Speed to inverter (LFRD)*)
+		command : UINT;
+		speed : INT;
 	END_VAR
 END_FUNCTION_BLOCK
 
-{REDUND_ERROR} FUNCTION_BLOCK DoorStateMashine (*Door state machine*) (*$GROUP=User,$CAT=User,$GROUPICON=User.png,$CATICON=User.png*)
+{REDUND_ERROR} FUNCTION_BLOCK DoorStateMashine (* *) (*$GROUP=User,$CAT=User,$GROUPICON=User.png,$CATICON=User.png*)
 	VAR_INPUT
-		state : UINT; (*Inverter status word*)
-		sw1 : BOOL; (*S0 - door open*)
-		sw2 : BOOL; (*S1*)
-		sw3 : BOOL; (*S2*)
-		sw4 : BOOL; (*S3 - door closed*)
-		direction : BOOL; (*Switch: 1 - close, 0 - open*)
+		state : UINT;
+		sw1 : BOOL;
+		sw2 : BOOL;
+		sw3 : BOOL;
+		sw4 : BOOL;
+		direction : BOOL;
 	END_VAR
 	VAR_OUTPUT
-		speed : INT; (*Speed setpoint*)
-		doorState : DoorStates; (*Current door state*)
+		speed : INT;
+		doorState : DoorStates;
 	END_VAR
 	VAR
-		s0Prev : BOOL; (*Sensor levels on previous cycle*)
+		s0Prev : BOOL;
 		s1Prev : BOOL;
 		s2Prev : BOOL;
 		s3Prev : BOOL;
 	END_VAR
 END_FUNCTION_BLOCK
 
-{REDUND_ERROR} FUNCTION_BLOCK LedStateMashine (*LED indication*) (*$GROUP=User,$CAT=User,$GROUPICON=User.png,$CATICON=User.png*)
+{REDUND_ERROR} FUNCTION_BLOCK LedStateMashine (* *) (*$GROUP=User,$CAT=User,$GROUPICON=User.png,$CATICON=User.png*)
 	VAR_INPUT
-		state : UINT; (*Door state*)
-		cycleTime : UDINT; (*Task cycle time, ms*)
+		state : UINT;
+		cycleTime : UDINT;
 	END_VAR
 	VAR_OUTPUT
-		led1 : BOOL; (*S0*)
-		led2 : BOOL; (*S1*)
-		led3 : BOOL; (*S2*)
-		led4 : BOOL; (*S3*)
-		timer : INT; (*Blink timer, ms*)
+		led1 : BOOL;
+		led2 : BOOL;
+		led3 : BOOL;
+		led4 : BOOL;
+		timer : INT;
 	END_VAR
 	VAR
 		elapsed : UDINT;

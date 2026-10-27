@@ -39,13 +39,13 @@ void DriveStateMashine(struct DriveStateMashine* inst)
 	{
 		/* Работа разрешена - передаём задание скорости */
 		inst->command = CMD_ENABLE;
-		inst->speed   = inst->speedSet;
+		inst->speed = inst->speedSet;
 	}
 	else if (st == STATE_READY)
 	{
 		/* SWITCHED ON -> разрешить работу */
 		inst->command = CMD_ENABLE;
-		inst->speed   = 0;
+		inst->speed = 0;
 	}
 	else if (st == STATE_SWITCHED_ON)
 	{

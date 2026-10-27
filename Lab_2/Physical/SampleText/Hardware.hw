@@ -13,6 +13,7 @@
     <Parameter ID="TimerDevice" Value="4PP065_0571_P74.IF4" />
     <Parameter ID="TaskClassIdleTime" Value="2000" />
     <Parameter ID="Cyclic1Duration" Value="2000" />
+    <Parameter ID="Cyclic1Tolerance" Value="0" />
     <Parameter ID="Cyclic1Output" Value="1" />
   </Module>
   <Module Name="4PP065_IF10-1" Type="4PP065.IF10-1" Version="1.0.3.0">
